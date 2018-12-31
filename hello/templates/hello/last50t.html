@@ -1,0 +1,32 @@
+{% extends "hello/layout.html" %}
+{% block title %}
+    Report
+{% endblock %}
+{% block content %}
+    <p><strong>Report by 50 last tickets</strong></p>
+
+   {% if arr %}
+        <table class="message_list" style="margin-left: 50px;">
+            <thead>
+            <tr>
+                <th style="text-align: center">Date/Time</th>
+                <th style="text-align: center">Barcode</th>
+                <th style="text-align: center">Count</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in arr %}
+                <tr>
+                    <td>{{ i.0 }}</td>
+                    <td style="text-align: right">{{ i.1 }}</td>
+                    <td style="text-align: right">{{ i.2 }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No records found</p>
+    {% endif %}
+{% endblock %}
