@@ -1,0 +1,37 @@
+{% extends "hello/layout.html" %}
+{% block title %}
+    Report
+{% endblock %}
+{% block content %}
+    <p><strong>Detailed information about barcode {{ barcode }}</strong></p>
+
+        <table class="message_list">
+            <tbody>
+                <tr>
+                    <td>Name </td>
+                    <td>{{ name }}</td>
+                </tr>
+                 <tr>
+                    <td>Route time</td>
+                    <td>{{ rtime }}</td>
+                </tr>
+                <tr>
+                    <td>Route date </td>
+                    <td>{{ rdate }}</td>
+                </tr>
+                <tr>
+                    <td>Last printed date </td>
+                    <td>{{ pdate }}</td>
+                </tr>
+                <tr>
+                    <td>Last printed time </td>
+                    <td>{{ ptime }}</td>
+                </tr>
+                <tr>
+                    <td>Copies </td>
+                    <td>{{ copies }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+{% endblock %}
