@@ -34,7 +34,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '192.168.1.95'
+    '192.168.1.95',
+    '172.16.101.54'
     #'vscode-django-tutorial.azurewebsites.net'  # Sample name only!
 ]
 

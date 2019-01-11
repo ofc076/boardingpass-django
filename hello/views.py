@@ -22,6 +22,20 @@ def status(request):
     content['curdate'] = datetime.now()
     return render(request, "hello/status.html", context=content)
 
+def detail(request, barcode):
+    """Renders the about page."""
+    content = {}
+
+    info = get_detail(barcode)
+    content['barcode'] = barcode
+    content['name'] = info.get('name', 'n/a')
+    content['pdate'] = info.get('pdate', 'n/a')
+    content['ptime'] = info.get('ptime', 'n/a')
+    content['rtime'] = info.get('rtime', 'n/a')
+    content['rdate'] = info.get('rdate', 'n/a')
+    content['copies'] = info.get('copies', 'n/a')
+    return render(request, "hello/detail.html", context=content)
+
 
 def last30d(request):
     """Renders the about page."""

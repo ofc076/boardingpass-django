@@ -10,4 +10,5 @@ urlpatterns = [
     path("last30d/", views.last30d, name="last30d"),
     path("last50t/", views.last50t, name="last50t"),
     path("about/", views.about, name="about"),
+    path("detail/<barcode>", views.detail, name="detail"),
 ]

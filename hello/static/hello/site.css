@@ -60,3 +60,13 @@ tr:nth-child(even) {
 th {
   background-color: #f7f7f7
 }
+
+.mylink a:link{
+    text-decoration: none;
+    color: black;
+}
+
+.mylink a:visited {
+    text-decoration: none;
+    color: black;
+}

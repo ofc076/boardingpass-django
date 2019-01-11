@@ -97,3 +97,35 @@ def get_barcode_count(path):
         return count
     except:
         return '1'
+
+
+def get_detail(barcode):
+    file_name = join(MYPATH, barcode)
+    if isfile(file_name):
+        arr = []
+        count = 0
+        with open(file_name, 'r') as f:
+            for line in f:
+                try:
+                    if len(line) < 4:
+                        continue
+                    arr.append(line)
+                except:
+                    print('error_0')
+                    return {}
+        try:
+            last_ticket = arr[-1].split('#!')
+            rdate = last_ticket[0].split('_')[0]
+            rtime = last_ticket[0].split('_')[1]
+            copies = last_ticket[1]
+            file_datetime = stat(file_name)[ST_MTIME]
+            ptime = datetime.fromtimestamp(file_datetime).strftime('%H:%M:%S')
+            pdate = datetime.fromtimestamp(file_datetime).strftime('%Y-%m-%d')
+            return {'rdate': rdate, 'rtime': rtime, 'copies': copies, 'ptime': ptime, 'pdate': pdate}
+        except:
+            print('error')
+            return {}
+    else:
+        return {}
+    print('error_END')
+    return 'n/a'
